@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../service/firebase";
 import { FirebaseError } from "firebase/app";
-import { Button, TextField } from "@mui/material";
+import { Button, Stack, TextField } from "@mui/material";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -28,25 +28,28 @@ function LoginForm() {
   };
 
   return (
-    <div>
-      <form onSubmit={signIn}>
-        <TextField
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="이메일"
-          size="small"
-        />
-        <TextField
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="비밀번호"
-          size="small"
-        />
-        <Button type="submit">로그인</Button>
-      </form>
-    </div>
+    <Stack onSubmit={signIn} component="form" spacing={2} mt={1}>
+      <TextField
+        label="이메일"
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="이메일"
+        size="small"
+        autoFocus
+      />
+      <TextField
+        label="비밀번호"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="비밀번호"
+        size="small"
+      />
+      <Button type="submit" variant="contained">
+        로그인
+      </Button>
+    </Stack>
   );
 }
 

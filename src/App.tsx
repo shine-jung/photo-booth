@@ -1,22 +1,13 @@
-import { useAuthContext } from "./auth/hooks";
-import LoginForm from "./components/login-form";
-import LogoutBtn from "./components/logout-btn";
+import { LazyMotion, domMax } from "framer-motion";
+import PhotoBooth from "./components/photo-booth";
 import ThemeProvider from "./theme";
 
 function App() {
-  const { currentUser } = useAuthContext();
-
   return (
     <ThemeProvider>
-      <>
-        {currentUser ? (
-          <p>
-            Welcome, {currentUser.email} <LogoutBtn />
-          </p>
-        ) : (
-          <LoginForm />
-        )}
-      </>
+      <LazyMotion strict features={domMax}>
+        <PhotoBooth />
+      </LazyMotion>
     </ThemeProvider>
   );
 }
