@@ -1,4 +1,3 @@
-import { Theme } from "@mui/material/styles";
 import {
   LoadingButtonProps,
   loadingButtonClasses,
@@ -6,7 +5,7 @@ import {
 
 // ----------------------------------------------------------------------
 
-export function loadingButton(theme: Theme) {
+export function loadingButton() {
   return {
     MuiLoadingButton: {
       styleOverrides: {

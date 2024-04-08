@@ -59,18 +59,18 @@ export function componentsOverrides(theme: Theme) {
     paper(theme),
     alert(theme),
     radio(theme),
-    select(theme),
+    select(),
     button(theme),
     rating(theme),
     dialog(theme),
-    appBar(theme),
+    appBar(),
     avatar(theme),
     slider(theme),
     drawer(theme),
     stepper(theme),
     tooltip(theme),
     popover(theme),
-    svgIcon(theme),
+    svgIcon(),
     switches(theme),
     checkbox(theme),
     dataGrid(theme),
@@ -85,10 +85,10 @@ export function componentsOverrides(theme: Theme) {
     pagination(theme),
     buttonGroup(theme),
     breadcrumbs(theme),
-    cssBaseline(theme),
+    cssBaseline(),
     autocomplete(theme),
     toggleButton(theme),
-    loadingButton(theme)
+    loadingButton()
   );
 
   return components;
